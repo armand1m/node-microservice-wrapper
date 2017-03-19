@@ -1,0 +1,43 @@
+{
+  "name": "microservice-wrapper",
+  "version": "0.0.0",
+  "description": "A node.js microservice server wrapper",
+  "license": "MIT",
+  "repository": "armand1m/node-microservice-wrapper",
+  "author": {
+    "name": "Armando Magalhães",
+    "email": "armando.mag95@gmail.com",
+    "url": "armand1m.herokuapp.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "ava",
+    "test:watch": "ava --watch",
+    "test:cover": "nyc ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    ""
+  ],
+  "dependencies": {
+    "consul": "^0.28.0",
+    "microservice-events": "^1.0.0",
+    "microservice-info": "^1.0.2"
+  },
+  "devDependencies": {
+    "nyc": "^10.1.2",
+    "ava": "^0.17.0",
+    "chai": "^3.5.0",
+    "sinon": "^2.0.0"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  }
+}
