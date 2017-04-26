@@ -18,6 +18,7 @@ $ npm install --save microservice-wrapper
 
 Lets say you have a `service.js` and an `index.js` file, and you want to build your microservice using Express.
 
+### Usage with promises
  - `service.js`:
 ```js
 const Info = require('microservice-info')
@@ -51,6 +52,25 @@ module.exports = {
 
 ```
 
+### Usage with async/await
+
+- `service.js`:
+```js
+const Info = require('microservice-info')
+const express = require('express')
+const app = express()
+
+app.get(`/${Info.name}/health`, (req, res) => {
+  res.send('{ "status": "health" }')
+})
+
+module.exports = {
+  start: async (port) => await api.listen(port),
+  stop: async (instance) => await instance.close()
+}
+```
+
+### Main wrapper
  - `index.js`
 ```js
 const MicroserviceWrapper = require('microservice-wrapper')
